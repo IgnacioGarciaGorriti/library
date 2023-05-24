@@ -2,7 +2,28 @@
     display: flex;
     flex-direction: column;
     gap: .5rem;
+    width: 50vw;
+    background: white;
+    border: 1px solid #a1a1a1;
+    border-radius: 15px;
+    padding: 1rem;
+}
+
+.modal-bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(.25rem);
     width: 100%;
     min-height: 100vh;
+    position: fixed;
     z-index: 1;
 }
+
+.modal input {
+    border: 1px solid #a1a1a1;
+    border-radius: 1rem;
+    padding: .5rem;
+    font-size: small;
+}
+

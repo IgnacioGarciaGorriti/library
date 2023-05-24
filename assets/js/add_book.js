@@ -45,12 +45,14 @@ function print(books) {
 }
 
 const createModal = () => {
+    const modal_bg = document.createElement('div');
     const modal = document.createElement('div');
     const title = document.createElement('input');
     const author = document.createElement('input');
     const category = document.createElement('input');
     const isbn = document.createElement('input');
     const date = document.createElement('input');
+    const btn = document.createElement('button');
 
     title.id = 'title';
     title.type = 'text';
@@ -73,12 +75,20 @@ const createModal = () => {
     date.name = 'date';
     date.placeholder = 'Añade una fecha';
 
+    btn.textContent = 'Añadir libro';
+    btn.addEventListener('click', () => {
+        console.log('Hemos añadido un libro');
+    });
+
     modal.appendChild(title);
     modal.appendChild(author);
     modal.appendChild(category);
     modal.appendChild(isbn);
     modal.appendChild(date);
+    modal.appendChild(btn);
     modal.classList.add('modal');
-
-    return modal;
+    modal_bg.appendChild(modal);
+    modal_bg.classList.add('modal-bg');
+    
+    return modal_bg;
 }
