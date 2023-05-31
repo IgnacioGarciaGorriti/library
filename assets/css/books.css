@@ -1,5 +1,31 @@
+html {
+    height: 100%;
+}
+
 body {
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 2rem;
+    height: 100%;
 }
 
+.book-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: min(100%, 60rem);
+    align-self: center;
+    padding: 1rem 0;
+}
+
+.book-list div {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border: 1px solid #4b4b4b;
+    border-radius: 5px;
+    padding: .5rem;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+}
