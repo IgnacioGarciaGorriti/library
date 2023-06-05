@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap');
 html {
     height: 100%;
 }
@@ -7,6 +9,7 @@ body {
     flex-direction: column;
     margin: 0;
     height: 100%;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .toolbar {
@@ -78,7 +81,8 @@ body {
 .book-list div {
     display: grid;
     grid-template-columns: 1fr repeat(3, min-content);
-    border: 1px solid #4b4b4b;
+    border: 1px solid #efefef;
+    box-shadow: 0 0 5px 5px #efefef;
     border-radius: 5px;
     padding: .5rem;
     column-gap: .5rem;
