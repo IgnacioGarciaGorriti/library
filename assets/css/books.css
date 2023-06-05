@@ -6,9 +6,18 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    padding: 2rem;
     height: 100%;
 }
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 10px 5px #e3e3e3;
+    background: white;
+}
+
+
+
 
 .book-list {
     display: flex;
