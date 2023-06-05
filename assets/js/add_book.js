@@ -85,7 +85,7 @@ const createModal = (db, book = null) => {
     date.placeholder = 'Añade una fecha';
     book ? date.value = book.date : date.value = "";
 
-    btn.textContent = 'Añadir libro';
+    btn.textContent = book ? 'Editar Libro' : 'Añadir libro';
     btn.type = 'button';
 
     btn.addEventListener('click', () => {
