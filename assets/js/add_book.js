@@ -4,48 +4,47 @@ import {Book} from './Entity/Book.js';
 document.addEventListener('DOMContentLoaded', () => {
     const db = new Db('book_table');
     const btn = document.getElementById('add_book');
+    const search_input = document.getElementById('search');
+    search_input.addEventListener('keyup', () => {
+        const data = search(db, search_input.value);
+        console.log(data);
+        print(db, data);
+    });
     btn.addEventListener('click', () => {
         const body = document.body;
         body.appendChild(createModal(db));
     });
-    print(db);
+    print(db, db.getAll());
 });
 
-function print(db) {
-    const books = db.getAll();
+function print(db, books) {
     const list_container = document.getElementById('list');
     list_container.innerHTML = '';
     for(let book of books) {
         const container = document.createElement('div');
         const title = document.createElement('span');
-        const author = document.createElement('span');
-        const category = document.createElement('span');
-        const isbn = document.createElement('span');
-        const date = document.createElement('span');
-        const remove = document.createElement('button');
-        const edit = document.createElement('button');
-        edit.textContent = 'Editar';
+        const remove = document.createElement('span');
+        const edit = document.createElement('span');
+        const view = document.createElement('span');
+        edit.classList.add('btn-icon', 'btn-icon-edit');
         edit.addEventListener('click', () => {
             const body = document.body;
             body.appendChild(createModal(db, book));
         });
-        remove.textContent = 'Eliminar';
+        remove.classList.add('btn-icon', 'btn-icon-remove');
         remove.addEventListener('click', () => {
             db.delete(book.id);
             container.remove();
         });
+        view.classList.add('btn-icon', 'btn-icon-view');
+        view.addEventListener('click', () => {
+            console.log(book.id);
+        });
         title.textContent = book.title;
-        author.textContent = book.author;
-        category.textContent = book.category;
-        isbn.textContent = book.isbn;
-        date.textContent = book.date;
         container.appendChild(title);
-        container.appendChild(author);
-        container.appendChild(category);
-        container.appendChild(isbn);
-        container.appendChild(date);
-        container.appendChild(remove);
+        container.appendChild(view);
         container.appendChild(edit);
+        container.appendChild(remove);
         container.classList.add('book');
         list_container.appendChild(container);
     }
@@ -93,7 +92,7 @@ const createModal = (db, book = null) => {
         const form = document.getElementById('add_book_form');
         const data = new FormData(form);
         book ? db.update(book.id, data) : add(db)
-        print(db);
+        print(db, db.getAll());
         modal_bg.remove();
     });
 
@@ -128,4 +127,8 @@ const add = (db) => {
     
     const book = new Book(id, ...bookData);
     db.add(book);
+}
+
+const search = (db, value) => {
+    return db.getBy('title', value);
 }
