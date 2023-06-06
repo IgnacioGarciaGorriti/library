@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap');
 html {
     height: 100%;
 }
@@ -7,6 +9,64 @@ body {
     flex-direction: column;
     margin: 0;
     height: 100%;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.toolbar {
+    display: flex;
+    gap: 1rem;
+    background: white;
+    box-shadow: 0 1px 10px 2px #dddddd;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+}
+
+.toolbar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: rgb(32, 32, 32);
+    padding: 1rem;
+}
+
+.toolbar a:hover {
+    background: #e6e6e6;
+}
+
+.toolbar input {
+    padding: .5rem;
+    border: 1px solid #d4d4d4;
+    border-radius: 1rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.book-utils {
+    display: flex;
+    justify-content: end;
+    width: min(100%, 60rem);
+    align-self: center;
+}
+
+.book-utils button {
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    background: #1f33e6;
+    border: 1px solid #1f33e6;
+    color: white;
+    cursor: pointer;
+}
+
+.book-utils button:hover {
+    color: #1f33e6;
+    background: white;
 }
 
 .toolbar {
@@ -30,11 +90,53 @@ body {
 
 .book-list div {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    border: 1px solid #4b4b4b;
+    grid-template-columns: 1fr repeat(3, min-content);
+    border: 1px solid #efefef;
+    box-shadow: 0 0 5px 5px #efefef;
     border-radius: 5px;
     padding: .5rem;
+    column-gap: .5rem;
     align-items: center;
     justify-content: center;
     justify-self: center;
+}
+
+.btn-icon {
+    border-radius: 8px;
+    border: none;
+    padding: .3rem;
+    cursor: pointer;
+}
+
+.btn-icon-remove {
+    content: url('../icons/delete.svg');
+    background: rgb(243, 73, 73);
+    border: 1px solid rgb(243, 73, 73);
+}
+
+.btn-icon-remove:hover {
+    content: url('../icons/delete-red.svg');
+    background: white;
+}
+
+.btn-icon-edit {
+    content: url('../icons/edit.svg');
+    background: rgb(245, 189, 70);
+    border: 1px solid rgb(245, 189, 70);
+}
+
+.btn-icon-edit:hover {
+    content: url('../icons/edit-orange.svg');
+    background: white;
+}
+
+.btn-icon-view {
+    content: url('../icons/eye.svg');
+    background: rgb(62, 155, 231);
+    border: 1px solid rgb(62, 155, 231);
+}
+
+.btn-icon-view:hover {
+    content: url('../icons/eye-blue.svg');
+    background: white;
 }

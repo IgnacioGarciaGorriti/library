@@ -27,12 +27,13 @@ export class Db {
     }
 
     getBy(property, value) {
-        return this.table.filter(element => element[property] === value);
+        return this.table.filter(element => element[property].toLowerCase().includes(value.toLowerCase().trim()));
     }
 
     update(id, data) {
         const element = this.table.find(element => element.id === id);
         data.forEach((value, key) => {
+            console.log(key, value);
             element[key] = value;
         });
         localStorage.setItem(this.table_name, JSON.stringify(this.table));
