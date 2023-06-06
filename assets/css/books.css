@@ -84,3 +84,14 @@ body {
     background: white;
     content: url('../icons/delete-red.svg');
 }
+
+.btn-icon-edit {
+    content: url('../icons/delete.svg');
+    background: #ecc44c;
+    border: 1px solid #ecc44c;
+}
+
+.btn-icon-edit:hover {
+    background: white;
+    content: url('../icons/delete-red.svg');
+}
