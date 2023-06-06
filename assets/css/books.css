@@ -68,6 +68,19 @@ body {
     justify-self: center;
 }
 
+.btn-icon {
+    padding: .3rem;
+    border: none;
+    border-radius: 5px;
+}
+
 .btn-icon-remove {
     content: url('../icons/delete.svg');
+    background: #ec4c4c;
+    border: 1px solid #ec4c4c;
+}
+
+.btn-icon-remove:hover {
+    background: white;
+    content: url('../icons/delete-red.svg');
 }
