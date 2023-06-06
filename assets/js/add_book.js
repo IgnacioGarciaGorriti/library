@@ -4,12 +4,6 @@ import {Book} from './Entity/Book.js';
 document.addEventListener('DOMContentLoaded', () => {
     const db = new Db('book_table');
     const btn = document.getElementById('add_book');
-    const search_input = document.getElementById('search');
-    search_input.addEventListener('keyup', () => {
-        const data = search(db, search_input.value);
-        console.log(data);
-        print(db, data);
-    });
     btn.addEventListener('click', () => {
         const body = document.body;
         body.appendChild(createModal(db));
@@ -37,9 +31,6 @@ function print(db, books) {
             container.remove();
         });
         view.classList.add('btn-icon', 'btn-icon-view');
-        view.addEventListener('click', () => {
-            console.log(book.id);
-        });
         title.textContent = book.title;
         container.appendChild(title);
         container.appendChild(view);
@@ -127,8 +118,4 @@ const add = (db) => {
     
     const book = new Book(id, ...bookData);
     db.add(book);
-}
-
-const search = (db, value) => {
-    return db.getBy('title', value);
 }
