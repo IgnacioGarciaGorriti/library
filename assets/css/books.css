@@ -96,3 +96,14 @@ body {
     background: white;
     content: url('../icons/edit-orange.svg');
 }
+
+.btn-icon-view {
+    content: url('../icons/eye.svg');
+    background: #34a1e0;
+    border: 1px solid #34a1e0;
+}
+
+.btn-icon-view:hover {
+    content: url('../icons/eye-blue.svg');
+    background: #ffffff;
+}
