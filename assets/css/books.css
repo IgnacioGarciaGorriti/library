@@ -72,6 +72,7 @@ body {
     padding: .3rem;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .btn-icon-remove {
@@ -86,12 +87,12 @@ body {
 }
 
 .btn-icon-edit {
-    content: url('../icons/delete.svg');
+    content: url('../icons/edit.svg');
     background: #ecc44c;
     border: 1px solid #ecc44c;
 }
 
 .btn-icon-edit:hover {
     background: white;
-    content: url('../icons/delete-red.svg');
+    content: url('../icons/edit-orange.svg');
 }
