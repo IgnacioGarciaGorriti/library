@@ -4,6 +4,11 @@ import {Book} from './Entity/Book.js';
 document.addEventListener('DOMContentLoaded', () => {
     const db = new Db('book_table');
     const btn = document.getElementById('add_book');
+    const search = document.getElementById('search');
+    search.addEventListener('keyup', () => {
+        const books = db.getBy('title', search.value);
+        print(db, books);
+    });
     btn.addEventListener('click', () => {
         const body = document.body;
         body.appendChild(createModal(db));
