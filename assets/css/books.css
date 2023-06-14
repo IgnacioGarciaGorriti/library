@@ -76,7 +76,7 @@ body {
     display: flex;
     width: min(100%, 60rem);
     align-self: center;
-    justify-content: end;
+    justify-content: space-between;
 }
 
 .book-utils button {
@@ -93,6 +93,36 @@ body {
 .book-utils button:hover {
     background: white;
     color:#2062e4;
+}
+
+.book-utils-filters {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.book-utils-filters select {
+    background: white;
+    border: 1px solid #e1e1e1;
+    border-radius: 1.5rem;
+    font-family: 'Quicksand', sans-serif;
+    padding: .5rem;
+}
+
+.book-utils-filters span {
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    cursor: pointer;
+    border: 1px solid #3b3b3b;
+    border-radius: .3rem;
+    padding: .4rem;
+}
+
+.book-utils-filters span::before {
+    content: url("../icons/filter.svg");
+    display: flex;
+    align-items: center;
 }
 
 .btn-icon {
