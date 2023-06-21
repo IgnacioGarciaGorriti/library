@@ -9,7 +9,7 @@ export class Db {
     }
 
     get(id) {
-        return this.table.find(element => element.id === id);
+        return this.table.find(element => element.id == id);
     }
 
     delete(id) {
