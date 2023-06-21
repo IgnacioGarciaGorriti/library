@@ -36,6 +36,9 @@ function print(db, books) {
             container.remove();
         });
         view.classList.add('btn-icon', 'btn-icon-view');
+        view.addEventListener("click", () => {
+            window.location.href = 'templates/book.html?id=' + book.id;
+        });
         title.textContent = book.title;
         container.appendChild(title);
         container.appendChild(view);

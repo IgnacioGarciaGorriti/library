@@ -17,4 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const category = document.getElementById('category');
     const isbn = document.getElementById('isbn');
     const date = document.getElementById('date');
+    title.value = book.title;
+    author.value = book.author;
+    category.value = book.category;
+    isbn.value = book.isbn;
+    date.value = book.date;
 });
