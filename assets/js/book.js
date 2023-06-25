@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const db = new Db('book_table');
     const book = db.get(id);
     if(!book) {
-        // TODO: handle error
+        window.location.href = "404.html";
+        return;
     }
     const title = document.getElementById('title');
     const author = document.getElementById('author');

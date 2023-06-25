@@ -1,6 +1,7 @@
 import {Db} from './Services/Db.js';
 import {Book} from './Entity/Book.js';
 
+
 document.addEventListener('DOMContentLoaded', () => {
     const db = new Db('book_table');
     const btn = document.getElementById('add_book');
@@ -57,6 +58,7 @@ const createModal = (db, book = null) => {
     const category = document.createElement('input');
     const isbn = document.createElement('input');
     const date = document.createElement('input');
+    const file = document.createElement('input');
     const btn = document.createElement('button');
     title.id = 'title';
     title.type = 'text';
@@ -83,6 +85,9 @@ const createModal = (db, book = null) => {
     date.name = 'date';
     date.placeholder = 'Añade una fecha';
     book ? date.value = book.date : date.value = "";
+    file.id = 'file';
+    file.name = 'file';
+    file.type = 'file';
 
     btn.textContent = book ? 'Editar Libro' : 'Añadir libro';
     btn.type = 'button';
@@ -106,6 +111,7 @@ const createModal = (db, book = null) => {
     modal.appendChild(category);
     modal.appendChild(isbn);
     modal.appendChild(date);
+    modal.appendChild(file);
     modal.appendChild(btn);
     modal.classList.add('modal');
     modal.id = 'add_book_form';
@@ -118,6 +124,7 @@ const createModal = (db, book = null) => {
 const add = (db) => {
     const form = document.getElementById('add_book_form');
     const data = new FormData(form);
+    saveFile(data.get('file')); 
     const id = db.getLastId();
     const bookData = [];
     for(let value of data.values()) {
