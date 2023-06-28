@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js" integrity="sha512-szJ5FSo9hEmXXe7b5AUVtn/WnL8a5VofnFeYC2i2z03uS2LhAch7ewNLbl5flsEmTTimMN0enBZg/3sQ+YOSzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../assets/js/register.js" type="application/javascript"></script>
+    <link rel="stylesheet" type="txt/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <title>Document</title>
 </head>
 <body>
     <div>
-        <form>
+        <form id="register">
             <div>
                 <label for="firstName">Nombre</label>
                 <input type="text" id="firstName" name="firstName" placeholder="Añade un nombre">
@@ -36,6 +40,7 @@
                 <label for="password2">Vuelve a introducir la contraseña</label>
                 <input type="password" id="password2" name="password2" placeholder="Vuelve a introducir la contraseña">
             </div>
+            <button id="register-save" type="button">Registrarse</button>
         </form>
     </div>
 </body>

@@ -6,5 +6,6 @@ export class User {
         this.nickname = nickname;
         this.age = age;
         this.email = email;
+        this.password = password;
     }
 }
