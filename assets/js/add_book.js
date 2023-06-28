@@ -1,7 +1,6 @@
 import {Db} from './Services/Db.js';
 import {Book} from './Entity/Book.js';
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const db = new Db('book_table');
     const btn = document.getElementById('add_book');
