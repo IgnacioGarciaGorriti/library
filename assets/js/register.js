@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
             checkFields(db, data);
             const id = db.getLastId();
             const user = new User(id, ...data.values());
+            db.add(user);
         } catch(e) {
             toastr.error(e.message);
         }
@@ -23,6 +24,8 @@ const checkFields = (db, fields) => {
             throw new Error("El campo " + key + " no puede estar vacío");
         } else if(key === "nickname" && db.getBy("nickname", field).length !== 0 ) {
             throw new Error("El nickname ya existe");
+        } else if(key === "email" && db.getBy("email", field).length !== 0 ) {
+            throw new Error("El email ya existe");
         }
     });
 }
