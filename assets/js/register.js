@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const id = db.getLastId();
             const user = new User(id, ...data.values());
             db.add(user);
-            //location.href = 'login.html';
+            location.href = 'login.html';
         } catch(e) {
             toastr.error(e.message);
         }
