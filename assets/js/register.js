@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const data = new FormData(form);
             checkFields(db, data);  
             const id = db.getLastId();
+            data.set('password', hashPassword(data.get('password')));
             const user = new User(id, ...data.values());
             db.add(user);
             location.href = 'login.html';
