@@ -50,3 +50,7 @@ const checkDate = (dateString) => {
 
     return true;
 }
+
+const hashPassword = (password) => {
+    return sha256(password);
+}
