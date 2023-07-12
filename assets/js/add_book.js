@@ -122,8 +122,7 @@ const createModal = (db, book = null) => {
 
 const add = (db) => {
     const form = document.getElementById('add_book_form');
-    const data = new FormData(form);
-    saveFile(data.get('file')); 
+    const data = new FormData(form); 
     const id = db.getLastId();
     const bookData = [];
     for(let value of data.values()) {
