@@ -2,6 +2,9 @@ import {Db} from './Services/Db.js';
 import {Book} from './Entity/Book.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+    if(!localStorage.getItem('library_user') || !Number.isInteger(parseInt(localStorage.getItem('library_user')))) {
+        location.href = 'templates/login.html';
+    }
     const db = new Db('book_table');
     const btn = document.getElementById('add_book');
     const search = document.getElementById('search');
@@ -124,11 +127,12 @@ const add = (db) => {
     const form = document.getElementById('add_book_form');
     const data = new FormData(form); 
     const id = db.getLastId();
+    const userId = localStorage.getItem('library_user');
     const bookData = [];
     for(let value of data.values()) {
         bookData.push(value);
     }
     
-    const book = new Book(id, ...bookData);
+    const book = new Book(id, userId, ...bookData);
     db.add(book);
 }
