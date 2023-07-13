@@ -1,8 +1,9 @@
 import {Db} from './Services/Db.js';
 import {Book} from './Entity/Book.js';
+import {User} from './Entity/User.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    if(!localStorage.getItem('library_user') || !Number.isInteger(parseInt(localStorage.getItem('library_user')))) {
+    if(!User.validateUserLogged()){
         location.href = 'templates/login.html';
     }
     const db = new Db('book_table');
