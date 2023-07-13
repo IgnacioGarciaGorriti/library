@@ -8,11 +8,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js" integrity="sha512-szJ5FSo9hEmXXe7b5AUVtn/WnL8a5VofnFeYC2i2z03uS2LhAch7ewNLbl5flsEmTTimMN0enBZg/3sQ+YOSzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../assets/js/register.js" type="module"></script>
+    <link href="../assets/css/register.css" rel="stylesheet" type="text/css">
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <form id="register">
+    <div class="container">
+        <form id="register" class="form">
+            <h2>Registro</h2>
             <div>
                 <label for="firstName">Nombre</label>
                 <input type="text" id="firstName" name="firstName" placeholder="Añade un nombre">
@@ -28,6 +30,7 @@
             <div>
                 <label for="age">Añade tu fecha de nacimiento</label>
                 <input type="date" id="age" name="age">
+            </div>
             <div>
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="Añade tu email">
