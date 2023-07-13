@@ -1,6 +1,11 @@
 import {Db} from './Services/Db';
+import {User} from './Entity/User.js';
 
 document.addEventListener("DOMContentLoaded", () => {
+    if(!User.validateUserLogged()){
+        location.href = 'login.html';
+        return;
+    }
     const urlSearch = new URLSearchParams(window.location.search);
     if(!urlSearch.has("id")) {
         window.location.href = "../index.html";

@@ -5,6 +5,7 @@ import {User} from './Entity/User.js';
 document.addEventListener('DOMContentLoaded', () => {
     if(!User.validateUserLogged()){
         location.href = 'templates/login.html';
+        return;
     }
     const db = new Db('book_table');
     const btn = document.getElementById('add_book');

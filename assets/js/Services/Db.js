@@ -33,7 +33,6 @@ export class Db {
     update(id, data) {
         const element = this.table.find(element => element.id === id);
         data.forEach((value, key) => {
-            console.log(key, value);
             element[key] = value;
         });
         localStorage.setItem(this.table_name, JSON.stringify(this.table));
